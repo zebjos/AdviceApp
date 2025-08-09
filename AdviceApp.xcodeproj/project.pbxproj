@@ -16,6 +16,7 @@
 		F226C1042E36227E00EB853B /* AdviceAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F226C1032E36227E00EB853B /* AdviceAppUITestsLaunchTests.swift */; };
 		F226C1122E365A2C00EB853B /* AdviceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F226C1112E365A2C00EB853B /* AdviceService.swift */; };
 		F226C1152E412FF000EB853B /* AdviceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F226C1142E412FF000EB853B /* AdviceViewModel.swift */; };
+		F226C1192E47522A00EB853B /* Advice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F226C1182E47522A00EB853B /* Advice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		F226C1032E36227E00EB853B /* AdviceAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdviceAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F226C1112E365A2C00EB853B /* AdviceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdviceService.swift; sourceTree = "<group>"; };
 		F226C1142E412FF000EB853B /* AdviceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdviceViewModel.swift; sourceTree = "<group>"; };
+		F226C1182E47522A00EB853B /* Advice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		F226C0E52E36227B00EB853B /* AdviceApp */ = {
 			isa = PBXGroup;
 			children = (
+				F226C1172E47521600EB853B /* Models */,
 				F226C1162E41302C00EB853B /* Views */,
 				F226C1132E412F9A00EB853B /* ViewModels */,
 				F226C1102E3659AE00EB853B /* Service */,
@@ -155,6 +158,14 @@
 				F226C0E82E36227B00EB853B /* ContentView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F226C1172E47521600EB853B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F226C1182E47522A00EB853B /* Advice.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +300,7 @@
 			files = (
 				F226C1152E412FF000EB853B /* AdviceViewModel.swift in Sources */,
 				F226C1122E365A2C00EB853B /* AdviceService.swift in Sources */,
+				F226C1192E47522A00EB853B /* Advice.swift in Sources */,
 				F226C0E92E36227B00EB853B /* ContentView.swift in Sources */,
 				F226C0E72E36227B00EB853B /* AdviceAppApp.swift in Sources */,
 			);
