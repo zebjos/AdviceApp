@@ -12,7 +12,7 @@ import SwiftData
 struct AdviceAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
         // SwiftData container to store Advice
         .modelContainer(for: Advice.self)
