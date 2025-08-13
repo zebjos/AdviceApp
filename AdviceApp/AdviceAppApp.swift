@@ -15,6 +15,6 @@ struct AdviceAppApp: App {
             MainView()
         }
         // SwiftData container to store Advice
-        .modelContainer(for: Advice.self)
+        .modelContainer(for: [Advice.self, ReflectionNote.self])
     }
 }

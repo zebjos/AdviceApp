@@ -16,17 +16,25 @@ struct ContentView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Text(viewModel.adviceText)
-                .padding()
-                .multilineTextAlignment(.center)
-                .font(.title2)
+            HStack {
+                Text(viewModel.adviceText)
+                    .padding()
+                    .multilineTextAlignment(.center)
+                    .font(.title2)
+                Button {
+                    viewModel.saveAdvice()
+                } label: {
+                    Image(systemName: "bookmark")
+                }
+            }
 
-            Button("Advice call") {
+            Button("Get advice!") {
                 Task {
                     await viewModel.fetchAdvice()
                 }
             }
             .padding()
+            
         }
         .onAppear {
             Task {

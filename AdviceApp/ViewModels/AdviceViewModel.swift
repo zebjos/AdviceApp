@@ -11,6 +11,7 @@ import SwiftData
 @MainActor
 class AdviceViewModel: ObservableObject {
     @Published var adviceText: String = "Tap the button to get advice"
+    @Published var currentAdviceID: Int?
 
     private let adviceService = AdviceService()
 
@@ -21,9 +22,8 @@ class AdviceViewModel: ObservableObject {
         do {
             let advice = try await adviceService.fetchRandomAdvice()
             adviceText = advice.advice
+            currentAdviceID = advice.id
             print("Advice Text: \(advice.advice)")
-            
-            saveAdvice(id: advice.id, text: advice.advice)
         } catch {
             adviceText = "Failed to fetch advice"
             print(error.localizedDescription)
@@ -31,20 +31,21 @@ class AdviceViewModel: ObservableObject {
     }
     
     // Used to save the fetched adviceto SwiftData
-    func saveAdvice(id: Int, text: String) {
-            guard let context = context else {
-                print("Failed to save")
-                return
-            }
-
-            let newAdvice = Advice(id: id, text: text)
-            context.insert(newAdvice)
-
-            do {
-                try context.save()
-                print("Saved advice: \(text)")
-            } catch {
-                print("Failed to save advice: \(error.localizedDescription)")
-            }
+    func saveAdvice() {
+        guard let context = context,
+              let id = currentAdviceID else {
+            print("Failed to save: no context or no advice loaded")
+            return
         }
+
+        let newAdvice = Advice(id: id, text: adviceText)
+        context.insert(newAdvice)
+
+        do {
+            try context.save()
+            print("Saved advice: \(newAdvice.text)")
+        } catch {
+            print("Failed to save advice: \(error.localizedDescription)")
+        }
+    }
 }
